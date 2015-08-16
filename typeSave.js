@@ -1,3 +1,11 @@
+/*
+ * TypeSave 1.0
+ * Docs: https://github.com/ktasos/type-save
+ * Author: Tasos Karagiannis
+ * Website: http://codingstill.com
+ * Twitter: https://twitter.com/codingstill
+ */
+
 (function ($) {
     $.fn.typeSave = function (options) {
         options = $.extend({}, $.fn.typeSave.defaultOptions, options);
