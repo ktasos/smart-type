@@ -1,5 +1,5 @@
 /*
- * TypeSave 1.0
+ * TypeSave 0.1
  * Docs: https://github.com/ktasos/type-save
  * Author: Tasos Karagiannis
  * Website: http://codingstill.com
