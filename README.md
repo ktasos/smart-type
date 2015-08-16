@@ -12,14 +12,14 @@ jQuery('.some-textbox').typeSave({
 
 ## Options
 
-### preventDefault
+#### preventDefault
 Allow or prevent the keyup event to be propagated. Default value is **true**. 
 
-### dataAttr
+#### dataAttr
 Specify the name of the **data-** attribute it will be used. Default value is **val**.
 
-### onSave
+#### onSave
 The callback function that is called when the user hits Enter. It has two attributes, the previous and the current value.
 
-### onCancel
+#### onCancel
 The callback function that is called when the user hits ESC.
