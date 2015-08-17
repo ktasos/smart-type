@@ -1,5 +1,5 @@
 /*
- * TypeSave 0.1
+ * TypeSave 0.2
  * Docs: https://github.com/ktasos/type-save
  * Author: Tasos Karagiannis
  * Website: http://codingstill.com
@@ -17,18 +17,23 @@
             jItem.attr(dataAttribute, jItem.val());
 
             jItem.keyup(function (e) {
-                if (e.which === 13) {
+                var isSave = e.which === 13;
+                var isCancel = e.which === 27;
+
+                if (isSave || isCancel) {
+                    var oldValue = jItem.attr(dataAttribute);
                     var newValue = jItem.val();
-                    var oldValue = jItem.attr(dataAttribute);
-                    if (newValue !== oldValue) {
-                        jItem.attr(dataAttribute, newValue);
-                        options.onSave(oldValue, newValue);
+
+                    if (oldValue !== newValue) {
+                        if (isSave) { 
+                            jItem.attr(dataAttribute, newValue);
+                            options.onSave(oldValue, newValue, jItem[0]);
+                        }
+                        if (isCancel) {
+                            jItem.val(oldValue);
+                            options.onCancel(oldValue, newValue, jItem[0]);
+                        }
                     }
-                }
-                else if (e.which === 27) {
-                    var oldValue = jItem.attr(dataAttribute);
-                    jItem.val(oldValue);
-                    options.onCancel();
                 }
 
                 options.preventDefault && e.preventDefault();
@@ -39,7 +44,7 @@
     $.fn.typeSave.defaultOptions = {
         preventDefault: true,
         dataAttr: 'val',
-        onSave: function (oldValue, newValue) { },
-        onCancel: function () { }
+        onSave: function (oldValue, newValue, textbox) { },
+        onCancel: function (oldValue, newValue, textbox) { }
     };
 })(jQuery);
