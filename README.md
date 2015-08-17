@@ -7,8 +7,8 @@ In both cases, the events trigger when the textbox has had its original value ch
 ## Usage
 ```js
 jQuery('.some-textbox').typeSave({
-  onSave: function (prev, current) { console.log('saving'); },
-  onCancel: function () { console.log('canceling'); }
+  onSave: function (prev, current, textbox) { console.log('saving'); },
+  onCancel: function (prev, current, textbox) { console.log('canceling'); }
 });
 ```
 
