@@ -4,7 +4,7 @@ A simple jQuery plugin that helps you bind events to a textbox when **hitting En
 The functionality it provides is very simple and its purpose is to avoid writing over and over again the same trivial code. 
 
 
-## How ti works
+## How it works
 
 - When saving the **onSave** callback is called and the new value becomes the original. 
 - When canceling  the **onCancel** callback is called and the value returns to the original value of the textbox. 
