@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="typeSave.js"></script>
+    <script type="text/javascript" src="smartType.js"></script>
     <style type="text/css">
         * {
             margin:0;
@@ -15,9 +15,9 @@
     <input class="some-textbox" type="text" />
     <script>
         jQuery('.some-textbox').val('some data');
-        jQuery('.some-textbox').typeSave({
-            onSave: function (prev, current) { console.log('save: ' + current); },
-            onCancel: function () { console.log('cancel'); }
+        jQuery('.some-textbox').smartType({
+            onSave: function (prev, current, textbox) { console.log('save: ' + current); },
+            onCancel: function (prev, current, textbox) { console.log('cancel'); }
         });
     </script>
 </body>

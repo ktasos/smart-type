@@ -1,12 +1,19 @@
-# type-save
-A simple jQuery plugin that helps you bind events to a textbox when saving (e.g. hitting Enter) or canceling (e.g. hitting ESC). 
-When saving the new value becomes the original value. 
-When canceling the value returns to the original value of the textbox. 
+# smart-type
+A simple jQuery plugin that helps you bind events to a textbox when **hitting Enter** (e.g. saving) or **hitting ESC** (e.g. canceling). 
+
+The functionality it provides is very simple and its purpose is to avoid writing over and over again the same trivial code. 
+
+
+## How ti works
+
+- When saving the **onSave** callback is called and the new value becomes the original. 
+- When canceling the value returns to the original value of the textbox. 
+
 In both cases, the events trigger when the textbox has had its original value changed. 
 
 ## Usage
 ```js
-jQuery('.some-textbox').typeSave({
+jQuery('.some-textbox').smartType({
   onSave: function (prev, current, textbox) { console.log('saving'); },
   onCancel: function (prev, current, textbox) { console.log('canceling'); }
 });
@@ -14,8 +21,14 @@ jQuery('.some-textbox').typeSave({
 
 ## Options
 
-#### preventDefault
-Allow or prevent the keyup event to be propagated. Default value is **true**. 
+#### clearOnCancel
+Clear textbox's value when canceling. Default value is **false**. 
+
+#### requireOnSave
+Trigger the onSave event if the textbox is empty. Default value is **false**. 
+
+#### preventDefaultOnSave
+Prevent or not the keyup event to be propagated when saving. Default value is **true**. 
 
 #### dataAttr
 Specify the name of the **data-** attribute it will be used. Default value is **val**.
@@ -27,6 +40,9 @@ The callback function that is called when the user hits Enter. It has three attr
 The callback function that is called when the user hits ESC. It has three attributes, the previous value, the current value and the textbox.
 
 ## Changelog
+
+#### Version 0.3
+Renamed to **smartType** from typeSave.  
 
 #### Version 0.2
 Changed attributes for the callback functions. 
