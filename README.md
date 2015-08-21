@@ -7,7 +7,7 @@ The functionality it provides is very simple and its purpose is to avoid writing
 ## How ti works
 
 - When saving the **onSave** callback is called and the new value becomes the original. 
-- When canceling the value returns to the original value of the textbox. 
+- When canceling  the **onCancel** callback is called and the value returns to the original value of the textbox. 
 
 In both cases, the events trigger when the textbox has had its original value changed. 
 
