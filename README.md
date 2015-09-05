@@ -3,7 +3,7 @@ A simple jQuery plugin that helps you bind events to a textbox when **hitting En
 
 The functionality it provides is very simple and its purpose is to avoid writing over and over again the same trivial code.
 
-This plugin is implemented for [Aptter](http://aptter.com/), an internal collaboration platform for businesses.
+This plugin was initially implemented for [Aptter](http://aptter.com/), an internal collaboration platform for businesses.
 
 ## How it works
 
