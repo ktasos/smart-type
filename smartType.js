@@ -4,6 +4,7 @@
  * Author: Tasos Karagiannis
  * Website: http://codingstill.com
  * Twitter: https://twitter.com/codingstill
+ * This plugin was initially implemented for http://aptter.com/
  */
 
 (function ($) {
@@ -47,7 +48,6 @@
                         }
                     }
                 }
-
             });
         });
     };
